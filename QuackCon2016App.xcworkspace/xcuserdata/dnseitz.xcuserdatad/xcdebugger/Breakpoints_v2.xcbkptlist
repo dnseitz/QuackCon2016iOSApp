@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuackCon2016App/FootballViewController.swift"
-            timestampString = "498302425.713063"
+            timestampString = "498304501.69007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "updateInformation(with:style:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuackCon2016App/FootballViewController.swift"
-            timestampString = "498302425.713063"
+            timestampString = "498304501.69007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "updateInformation(with:style:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,13 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuackCon2016App/FootballViewController.swift"
-            timestampString = "498302425.713063"
+            timestampString = "498304501.69007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "pagingView(_:cellForItemAtIndexPath:)"
-            landmarkType = "7">
+            startingLineNumber = "128"
+            endingLineNumber = "128">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

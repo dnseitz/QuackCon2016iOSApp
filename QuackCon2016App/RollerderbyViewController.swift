@@ -13,7 +13,9 @@ class RollerderbyViewController: UIViewController {
   @IBOutlet weak var homeTeam: UILabel!
   @IBOutlet weak var awayTeam: UILabel!
   @IBOutlet weak var score: UILabel!
-  @IBOutlet weak var tips: PagingView!
+  @IBOutlet weak var play: UILabel!
+  @IBOutlet weak var help: UILabel!
+  //@IBOutlet weak var tips: PagingView!
   @IBOutlet weak var background: UIImageView!
   
   let strokeTextAttributes = [
@@ -32,10 +34,10 @@ class RollerderbyViewController: UIViewController {
     awayTeam.attributedText = NSAttributedString(string: awayTeam.text!, attributes: strokeTextAttributes)
     score.attributedText = NSAttributedString(string: score.text!, attributes: strokeTextAttributes)
     
-    tips.delegate = self
-    tips.dataSource = self
-    tips.infinite = false
-    tips.registerNib(UINib(nibName: "PlayViewCell", bundle: nil), forCellWithReuseIdentifier: "TipView")
+//    tips.delegate = self
+//    tips.dataSource = self
+//    tips.infinite = false
+//    tips.registerNib(UINib(nibName: "PlayViewCell", bundle: nil), forCellWithReuseIdentifier: "TipView")
     
     self.view.sendSubview(toBack: background)
   }
@@ -53,8 +55,8 @@ class RollerderbyViewController: UIViewController {
     if let data = json["data"] as? [String: AnyObject] {
       if let alert = json["alert"] as? String {
         tipsList.append(alert)
-        tips.reloadData()
-        tips.backgroundColor = UIColor.clear
+//        tips.reloadData()
+//        tips.backgroundColor = UIColor.clear
       }
       parseDataObject(data)
     }
@@ -67,22 +69,25 @@ class RollerderbyViewController: UIViewController {
     if let homeScore = data["score_one"] as? Int, let awayScore = data["score_two"] as? Int {
       score.attributedText = NSAttributedString(string: "\(homeScore) - \(awayScore)", attributes: strokeTextAttributes)
     }
+    if let play = data["detail"] as? String {
+      self.play.text = play
+    }
   }
 }
 
-extension RollerderbyViewController: PagingViewDelegate, PagingViewDataSource {
-  func pagingView(_ pagingView: PagingView, numberOfItemsInSection section: Int) -> Int {
-    return self.tipsList.count
-  }
-  
-  func pagingView(_ pagingView: PagingView, cellForItemAtIndexPath indexPath: IndexPath) -> PagingViewCell {
-    let cell = tips.dequeueReusableCellWithReuseIdentifier("TipView")
-    
-    if let cell = cell as? PlayViewCell {
-      cell.textLabel.attributedText = NSAttributedString(string: self.tipsList[indexPath.item], attributes: strokeTextAttributes)
-      cell.textLabel.backgroundColor = UIColor.clear
-    }
-    
-    return cell
-  }
-}
+//extension RollerderbyViewController: PagingViewDelegate, PagingViewDataSource {
+//  func pagingView(_ pagingView: PagingView, numberOfItemsInSection section: Int) -> Int {
+//    return self.tipsList.count
+//  }
+//  
+//  func pagingView(_ pagingView: PagingView, cellForItemAtIndexPath indexPath: IndexPath) -> PagingViewCell {
+//    let cell = tips.dequeueReusableCellWithReuseIdentifier("TipView")
+//    
+//    if let cell = cell as? PlayViewCell {
+//      cell.textLabel.attributedText = NSAttributedString(string: self.tipsList[indexPath.item], attributes: strokeTextAttributes)
+//      cell.textLabel.backgroundColor = UIColor.clear
+//    }
+//    
+//    return cell
+//  }
+//}

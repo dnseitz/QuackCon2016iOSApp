@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PagingView
+//import PagingView
 
 class FootballViewController: UIViewController {
   @IBOutlet weak var homeTeam: UILabel!
@@ -16,7 +16,9 @@ class FootballViewController: UIViewController {
   @IBOutlet weak var awayPossession: UIImageView!
   @IBOutlet weak var score: UILabel!
   @IBOutlet weak var quarter: UILabel!
-  @IBOutlet weak var plays: PagingView!
+  @IBOutlet weak var play: UILabel!
+  @IBOutlet weak var help: UILabel!
+//  @IBOutlet weak var plays: PagingView!
   
   @IBOutlet weak var background: UIImageView!
   fileprivate enum Team {
@@ -29,10 +31,10 @@ class FootballViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-      plays.dataSource = self
-      plays.delegate = self
-      plays.infinite = false
-      plays.registerNib(UINib(nibName: "PlayViewCell", bundle: nil), forCellWithReuseIdentifier: "PlayView")
+//      plays.dataSource = self
+//      plays.delegate = self
+//      plays.infinite = false
+//      plays.registerNib(UINib(nibName: "PlayViewCell", bundle: nil), forCellWithReuseIdentifier: "PlayView")
       
       //homePossession.isHidden = true
       awayPossession.isHidden = true
@@ -40,9 +42,9 @@ class FootballViewController: UIViewController {
       self.view.sendSubview(toBack: background)
       background.layer.masksToBounds = true
       
+      help.textColor = UIColor.blue
+      
       //playsList = ["This is the first play", "This is the second", "This is the third"]
-      sleep(4)
-      playsList = [("", "A first down means the team has advanced the ball 10 yards from its starting position. A team has four downs to move the football 10 yards.")]
     }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -51,6 +53,12 @@ class FootballViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     background.isHidden = false
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    sleep(4)
+    self.help.text = "A first down means the team has advanced the ball 10 yards from its starting position. A team has four downs to move the football 10 yards."
+//    plays.reloadData()
   }
   
     override func didReceiveMemoryWarning() {
@@ -82,10 +90,12 @@ class FootballViewController: UIViewController {
     }
     if let play = json["playdesc"] as? String {
       let help = json["tutorial"] as? String
-      self.playsList.append((play, help))
+      self.play.text = play
+      self.help.text = help
     }
-    self.plays.reloadData()
-    self.plays.backgroundColor = UIColor.clear
+//    self.plays.reloadData()
+//    self.plays.scrollToPosition(Position.right, indexPath: IndexPath(item: playsList.count - 1, section: 0), animated: true)
+//    self.plays.backgroundColor = UIColor.clear
   }
   
   fileprivate func setPossession(team: Team) {
@@ -102,28 +112,28 @@ class FootballViewController: UIViewController {
   }
 }
 
-extension FootballViewController: PagingViewDataSource, PagingViewDelegate {
-  func pagingView(_ pagingView: PagingView, numberOfItemsInSection section: Int) -> Int {
-    return self.playsList.count
-  }
-  
-  func pagingView(_ pagingView: PagingView, cellForItemAtIndexPath indexPath: IndexPath) -> PagingViewCell {
-    let cell = plays.dequeueReusableCellWithReuseIdentifier("PlayView")
-    
-    if let cell = cell as? PlayViewCell {
-      cell.textLabel.text = self.playsList[indexPath.item].0
-      cell.helpLabel.text = self.playsList[indexPath.item].1
-      cell.helpLabel.textColor = UIColor.blue
-      cell.textLabel.backgroundColor = UIColor.clear
-    }
-    
-    return cell
-  }
-  
+//extension FootballViewController: PagingViewDataSource, PagingViewDelegate {
+//  func pagingView(_ pagingView: PagingView, numberOfItemsInSection section: Int) -> Int {
+//    return self.playsList.count
+//  }
+//  
+//  func pagingView(_ pagingView: PagingView, cellForItemAtIndexPath indexPath: IndexPath) -> PagingViewCell {
+//    let cell = plays.dequeueReusableCellWithReuseIdentifier("PlayView")
+//    
+//    if let cell = cell as? PlayViewCell {
+//      cell.textLabel.text = self.playsList[indexPath.item].0
+//      cell.helpLabel.text = self.playsList[indexPath.item].1
+//      cell.helpLabel.textColor = UIColor.blue
+//      cell.textLabel.backgroundColor = UIColor.clear
+//    }
+//    
+//    return cell
+//  }
+//  
 //  func indexPathOfStartingInPagingView(_ pagingView: PagingView) -> IndexPath? {
 //    if self.playsList.count > 0 {
 //      return IndexPath(item: self.playsList.count - 1, section: 0)
 //    }
 //    return nil
 //  }
-}
+//}
