@@ -51,7 +51,8 @@ class ViewController: UITableViewController {
     }
     else if topic.displayName.range(of: "Rollerderby") != nil {
       // Same down here...
-      
+      let rdViewController = RollerderbyViewController(nibName: "RollerderbyViewController", bundle: nil)
+      self.navigationController?.pushViewController(rdViewController, animated: true)
     }
   }
   
@@ -66,6 +67,7 @@ class ViewController: UITableViewController {
         self.topics.removeAll()
         
         for (key, value) in json {
+          guard key != "HapiTest" else { continue }
           let value = value as! [String: String]
           let displayName = value["displayName"]!
           let topicArn = value["topicArn"]!
@@ -74,7 +76,9 @@ class ViewController: UITableViewController {
           print(topic.name)
         }
         
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+          self.tableView.reloadData()
+        }
         
       }
     }

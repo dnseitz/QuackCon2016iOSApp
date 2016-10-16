@@ -8,8 +8,12 @@
 
 import UIKit
 
-extension UIViewController {
-  func updateInformation(with json:[String: AnyObject]) {
+protocol Notifiable {
+  func updateInformation(with json:[String: AnyObject], style: NotificationType)
+}
+
+extension UIViewController : Notifiable {
+  func updateInformation(with json:[String: AnyObject], style: NotificationType) {
     // Override in subclass
   }
 }

@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0838E8661DB2E2A700E6E7EF /* QCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0838E8651DB2E2A700E6E7EF /* QCViewController.swift */; };
+		08A0517C1DB2FBA000A8CDD5 /* PlayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0517B1DB2FBA000A8CDD5 /* PlayViewCell.swift */; };
+		08A0517E1DB2FBD700A8CDD5 /* PlayViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A0517D1DB2FBD700A8CDD5 /* PlayViewCell.xib */; };
+		08A051811DB3033100A8CDD5 /* RollerderbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0517F1DB3033100A8CDD5 /* RollerderbyViewController.swift */; };
+		08A051821DB3033100A8CDD5 /* RollerderbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A051801DB3033100A8CDD5 /* RollerderbyViewController.xib */; };
+		08A051841DB317EC00A8CDD5 /* QC+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A051831DB317EC00A8CDD5 /* QC+UIApplication.swift */; };
 		08D946421DB2210300D830F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D946411DB2210300D830F4 /* AppDelegate.swift */; };
 		08D946441DB2210300D830F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D946431DB2210300D830F4 /* ViewController.swift */; };
 		08D946471DB2210300D830F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08D946451DB2210300D830F4 /* Main.storyboard */; };
@@ -42,7 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0838E8651DB2E2A700E6E7EF /* QCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QCViewController.swift; sourceTree = "<group>"; };
+		08A0517B1DB2FBA000A8CDD5 /* PlayViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewCell.swift; sourceTree = "<group>"; };
+		08A0517D1DB2FBD700A8CDD5 /* PlayViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayViewCell.xib; sourceTree = "<group>"; };
+		08A0517F1DB3033100A8CDD5 /* RollerderbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollerderbyViewController.swift; sourceTree = "<group>"; };
+		08A051801DB3033100A8CDD5 /* RollerderbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollerderbyViewController.xib; sourceTree = "<group>"; };
+		08A051831DB317EC00A8CDD5 /* QC+UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QC+UIApplication.swift"; sourceTree = "<group>"; };
 		08D9463E1DB2210300D830F4 /* QuackCon2016App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuackCon2016App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D946411DB2210300D830F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08D946431DB2210300D830F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,14 +102,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0838E8641DB2E29300E6E7EF /* Superclass */ = {
-			isa = PBXGroup;
-			children = (
-				0838E8651DB2E2A700E6E7EF /* QCViewController.swift */,
-			);
-			name = Superclass;
-			sourceTree = "<group>";
-		};
 		08D946351DB2210300D830F4 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				08D946721DB29ED300D830F4 /* TopicViewCell.swift */,
+				08A0517B1DB2FBA000A8CDD5 /* PlayViewCell.swift */,
+				08A0517D1DB2FBD700A8CDD5 /* PlayViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -188,9 +190,10 @@
 		08D946791DB2D12000D830F4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0838E8641DB2E29300E6E7EF /* Superclass */,
 				08D9467A1DB2D14C00D830F4 /* FootballViewController.swift */,
 				08D9467B1DB2D14C00D830F4 /* FootballViewController.xib */,
+				08A0517F1DB3033100A8CDD5 /* RollerderbyViewController.swift */,
+				08A051801DB3033100A8CDD5 /* RollerderbyViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				08D9467F1DB2E18800D830F4 /* QC+UIViewController.swift */,
+				08A051831DB317EC00A8CDD5 /* QC+UIApplication.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -342,6 +346,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				08D9464C1DB2210300D830F4 /* LaunchScreen.storyboard in Resources */,
+				08A051821DB3033100A8CDD5 /* RollerderbyViewController.xib in Resources */,
+				08A0517E1DB2FBD700A8CDD5 /* PlayViewCell.xib in Resources */,
 				08D9467D1DB2D14C00D830F4 /* FootballViewController.xib in Resources */,
 				08D946491DB2210300D830F4 /* Assets.xcassets in Resources */,
 				08D946471DB2210300D830F4 /* Main.storyboard in Resources */,
@@ -418,13 +424,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				08D946801DB2E18800D830F4 /* QC+UIViewController.swift in Sources */,
+				08A051811DB3033100A8CDD5 /* RollerderbyViewController.swift in Sources */,
+				08A051841DB317EC00A8CDD5 /* QC+UIApplication.swift in Sources */,
 				08D946731DB29ED300D830F4 /* TopicViewCell.swift in Sources */,
 				08D946761DB29F0700D830F4 /* Topic.swift in Sources */,
 				08D946711DB2543B00D830F4 /* QuackConHTTPRequest.swift in Sources */,
-				0838E8661DB2E2A700E6E7EF /* QCViewController.swift in Sources */,
 				08D946441DB2210300D830F4 /* ViewController.swift in Sources */,
 				08D946421DB2210300D830F4 /* AppDelegate.swift in Sources */,
 				08D9467C1DB2D14C00D830F4 /* FootballViewController.swift in Sources */,
+				08A0517C1DB2FBA000A8CDD5 /* PlayViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,10 @@
 import UIKit
 import AWSCore
 
+@objc enum NotificationType: Int {
+  case alert, badge, sound, content
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -99,12 +103,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       print ("Silent notification")
       if let data = aps["data"] as? [String: AnyObject] {
         print(data)
-        window?.rootViewController?.updateInformation(with: data)
+        DispatchQueue.main.async {
+          UIApplication.topViewController()!.updateInformation(with: data, style: .content)
+        }
         completionHandler(.newData)
       }
       else {
         completionHandler(.noData)
       }
+    }
+    else if let _ = aps["alert"] as? String {
+      DispatchQueue.main.async {
+        UIApplication.topViewController()!.updateInformation(with: aps, style: .alert)
+      }
+      completionHandler(.newData)
+    }
+    else if let _ = aps["badge"] as? Int {
+      DispatchQueue.main.async {
+        UIApplication.topViewController()!.updateInformation(with: aps, style: .badge)
+      }
+      completionHandler(.newData)
+    }
+    else if let _ = aps["sound"] as? String {
+      DispatchQueue.main.async {
+        UIApplication.topViewController()!.updateInformation(with: aps, style: .sound)
+      }
+      completionHandler(.newData)
     }
     else {
       completionHandler(.noData)

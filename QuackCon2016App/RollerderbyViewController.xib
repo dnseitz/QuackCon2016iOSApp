@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RollerderbyViewController" customModule="QuackCon2016App" customModuleProvider="target">
+            <connections>
+                <outlet property="awayTeam" destination="eo8-Kq-ZWX" id="vLR-hU-jiy"/>
+                <outlet property="background" destination="EUv-Sj-NoA" id="cqb-zK-9pr"/>
+                <outlet property="homeTeam" destination="xk7-I0-Rzy" id="HFi-uJ-maQ"/>
+                <outlet property="score" destination="c93-GI-mjT" id="GQS-LT-xI3"/>
+                <outlet property="tips" destination="BEF-BH-cLz" id="VHd-G6-VYn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rollerderby-court" translatesAutoresizingMaskIntoConstraints="NO" id="EUv-Sj-NoA">
+                    <frame key="frameInset" minX="-452" minY="-188" width="832" height="855"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rose City Rollers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk7-I0-Rzy">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="Mgu-wd-5yE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <color key="highlightedColor" red="0.9959825873374939" green="0.99621325731277466" blue="0.99187678098678589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Central City Roller Girls" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-Kq-ZWX">
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c93-GI-mjT">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="84" id="9H2-uo-ZGG"/>
+                        <constraint firstAttribute="width" constant="160" id="EA5-hx-0rx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEF-BH-cLz" customClass="PagingView" customModule="PagingView">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roseCity" translatesAutoresizingMaskIntoConstraints="NO" id="qAm-Mh-6z2">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="fsN-3J-jVS"/>
+                        <constraint firstAttribute="height" constant="90" id="pv8-Rb-FLW"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="centralCity" translatesAutoresizingMaskIntoConstraints="NO" id="u36-pp-EbV">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="xjO-0D-m4I"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BEF-BH-cLz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="1" id="1XA-yK-r8z"/>
+                <constraint firstItem="xk7-I0-Rzy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="6eB-R6-BuA"/>
+                <constraint firstItem="xk7-I0-Rzy" firstAttribute="firstBaseline" secondItem="eo8-Kq-ZWX" secondAttribute="firstBaseline" id="7GJ-3F-QpT"/>
+                <constraint firstItem="c93-GI-mjT" firstAttribute="centerX" secondItem="BEF-BH-cLz" secondAttribute="centerX" id="F5B-E0-842"/>
+                <constraint firstItem="qAm-Mh-6z2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="26" id="GMA-cn-fm2"/>
+                <constraint firstAttribute="bottom" secondItem="BEF-BH-cLz" secondAttribute="bottom" constant="181" id="L0v-oM-eis"/>
+                <constraint firstAttribute="trailing" secondItem="u36-pp-EbV" secondAttribute="trailing" constant="26" id="Lgf-WK-BGj"/>
+                <constraint firstAttribute="trailing" secondItem="eo8-Kq-ZWX" secondAttribute="trailing" constant="16" id="VuS-YP-il0"/>
+                <constraint firstItem="u36-pp-EbV" firstAttribute="centerX" secondItem="eo8-Kq-ZWX" secondAttribute="centerX" id="fOU-se-7v8"/>
+                <constraint firstItem="BEF-BH-cLz" firstAttribute="top" secondItem="xk7-I0-Rzy" secondAttribute="bottom" constant="37" id="h8J-c7-f0t"/>
+                <constraint firstItem="xk7-I0-Rzy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="158" id="j9z-Hy-Paf"/>
+                <constraint firstItem="xk7-I0-Rzy" firstAttribute="baseline" secondItem="eo8-Kq-ZWX" secondAttribute="baseline" id="jmf-Fm-v85"/>
+                <constraint firstItem="c93-GI-mjT" firstAttribute="top" secondItem="qAm-Mh-6z2" secondAttribute="bottom" constant="26" id="nYW-ll-aUT"/>
+                <constraint firstItem="qAm-Mh-6z2" firstAttribute="top" secondItem="u36-pp-EbV" secondAttribute="top" id="rdd-d8-Ehd"/>
+                <constraint firstItem="qAm-Mh-6z2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="s3g-X1-GQF"/>
+                <constraint firstItem="qAm-Mh-6z2" firstAttribute="centerX" secondItem="xk7-I0-Rzy" secondAttribute="centerX" id="u1U-Vu-feO"/>
+                <constraint firstItem="qAm-Mh-6z2" firstAttribute="bottom" secondItem="u36-pp-EbV" secondAttribute="bottom" id="wCA-9L-s2v"/>
+                <constraint firstItem="c93-GI-mjT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xok-5r-wt4"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="124.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="centralCity" width="1000" height="1000"/>
+        <image name="rollerderby-court" width="2048" height="1529"/>
+        <image name="roseCity" width="236" height="140"/>
+    </resources>
+</document>
